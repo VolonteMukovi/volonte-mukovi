@@ -9,6 +9,58 @@
   --font-mono: 'Fira Code', monospace;
 }
 
+/* Theme variables (light defaults). Use the `.dark-theme` class on <html> to enable dark mode. */
+:root {
+  /* Core colors */
+  --bg: #f8fafc; /* slate-50 */
+  --bg-alt: #f1f5f9; /* lighter alt */
+  --card-bg: #ffffff; /* cards / surfaces */
+  --text: #0f172a; /* slate-800 */
+  --text-strong: #0f172a; /* slate-900 */
+  --muted: #6b7280; /* slate-500 */
+  --muted-2: #94a3b8; /* slate-400 */
+  --border: #e6edf5; /* slate-100-ish */
+  --border-2: #e2e8f0; /* slate-200 */
+  --surface-900: #0f1724; /* dark surface */
+  --accent: #6366f1; /* indigo-600 */
+}
+
+/* Dark theme overrides */
+html.dark-theme {
+  --bg: #0b1220; /* near slate-900 */
+  --bg-alt: #071024; 
+  --card-bg: #0b1220; /* keep cards dark */
+  --text: #e6eefc; /* light text */
+  --text-strong: #ffffff;
+  --muted: #9aa7b8;
+  --muted-2: #6b7a8a;
+  --border: #102030;
+  --border-2: #152033;
+  --surface-900: #020617;
+  --accent: #7c86ff;
+}
+
+/* Override common Tailwind utility classes so theme switching affects them */
+.bg-white { background-color: var(--card-bg) !important; }
+.bg-slate-50 { background-color: var(--bg) !important; }
+.bg-slate-900 { background-color: var(--surface-900) !important; }
+.text-slate-900, .text-slate-800 { color: var(--text-strong) !important; }
+.text-slate-700, .text-slate-600 { color: var(--text) !important; }
+.text-slate-500, .text-slate-400 { color: var(--muted) !important; }
+.text-slate-300 { color: var(--muted-2) !important; }
+.border-slate-100 { border-color: var(--border) !important; }
+.border-slate-200 { border-color: var(--border-2) !important; }
+.border-slate-800 { border-color: rgba(255,255,255,0.06) !important; }
+.bg-indigo-600 { background-color: var(--accent) !important; }
+.text-indigo-600 { color: var(--accent) !important; }
+
+/* Body base */
+body { background-color: var(--bg); color: var(--text); }
+
+/* Make selection color adapt a bit for dark */
+::selection { background: rgba(99,102,241,0.14); color: var(--text-strong); }
+
+
 body {
   font-family: var(--font-body);
   scroll-behavior: smooth;

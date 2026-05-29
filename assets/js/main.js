@@ -7,10 +7,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initNavbarScroll();
     initMobileMenu();
+    initThemeToggle();
     initTypewriter();
     initScrollAnimations();
     initContactForm();
 });
+
+/* ==========================================================================
+   0. THEME TOGGLE (LIGHT / DARK)
+   ========================================================================== */
+function initThemeToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const stored = localStorage.getItem('theme');
+    // Default to light mode unless the user explicitly chose 'dark'
+    const isDark = stored === 'dark';
+
+    if (isDark) document.documentElement.classList.add('dark-theme');
+
+    function updateIcon() {
+        toggle.innerHTML = document.documentElement.classList.contains('dark-theme')
+            ? '<i data-lucide="sun" class="w-6 h-6"></i>'
+            : '<i data-lucide="moon" class="w-6 h-6"></i>';
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    toggle.addEventListener('click', () => {
+        const nowDark = document.documentElement.classList.toggle('dark-theme');
+        localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+        updateIcon();
+    });
+
+    updateIcon();
+}
 
 /* ==========================================================================
    1. NAVIGATION & EFFET DE DÉFILEMENT (SCROLL)
