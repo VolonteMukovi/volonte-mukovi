@@ -259,7 +259,7 @@ function initCampusFaceMockup() {
     const logList = document.getElementById('cf-log-list');
 
     const mockStudents = [
-        { name: "Kambale Mukovi Volonté VD", matricule: "ULK/2022/3092" },
+        { name: "Kambale Mukovi Volonté", matricule: "ULK/2022/3092" },
         { name: "Kavira Masika Divine", matricule: "ULK/2023/1029" },
         { name: "Kakule Paluku Jean", matricule: "ULK/2021/4491" },
         { name: "Katungu Syatsimwa Grace", matricule: "ULK/2022/2918" }
@@ -327,7 +327,7 @@ function initSchoolManagerMockup() {
         { id: "001", name: "Muhindo Kambere Moise", class: "G1 Informatique", status: "Payé" },
         { id: "002", name: "Kahambu Kyakimwa Alice", class: "G2 Droit", status: "Tranche 1" },
         { id: "003", name: "Paluku Ndungo David", class: "G3 Economie", status: "Non payé" },
-        { id: "004", name: "Kambale Mukovi Volonté VD", class: "L2 Informatique", status: "Payé" },
+        { id: "004", name: "Kambale Mukovi Volonté", class: "L2 Informatique", status: "Payé" },
         { id: "005", name: "Kasereka Mwanawavene", class: "G1 Médecine", status: "Payé" }
     ];
 

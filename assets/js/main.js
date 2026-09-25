@@ -128,11 +128,11 @@ function initTypewriter() {
     if (!typewriterElement) return;
 
     const words = [
-        "Développeur Python / Django",
-        "Développeur React.js",
-        "Créateur de Solutions IoT (Arduino)",
-        "Directeur Technique @ Innovation Group",
-        "Étudiant en Informatique @ UNILUK"
+        "Développeur Full-Stack",
+        "Ingénieur logiciel",
+        "React.js & TypeScript",
+        "Django REST Framework",
+        "Bachelor en Systèmes Informatiques @ UNILUK"
     ];
     
     let wordIdx = 0;
